@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Free GPA Calculator - calculate your Grade Point Average online. Mobile-friendly and fast." />
+  <meta name="keywords" content="GPA calculator, grade point average, online GPA, student tools" />
+  <meta name="author" content="Aftab Hussain" />
+  <title>GPA Calculator | Student Tools</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Student Tools</a>
+      <nav class="main-nav">
+        <a href="index.html">GPA Calculator</a>
+        <a href="word-counter.html">Word Counter</a>
+        <a href="citation-generator.html">Citation Generator</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel" id="calculator">
+      <h1>Free GPA Calculator</h1>
+      <p class="lead">Enter your course credits and grades to calculate your GPA instantly.</p>
+
+      <div id="courses">
+        <div class="course">
+          <input type="text" placeholder="Course Name" class="course-name" />
+          <input type="number" placeholder="Credits" min="0" class="course-credits" />
+          <select class="course-grade">
+            <option value="4">A</option>
+            <option value="3.7">A-</option>
+            <option value="3.3">B+</option>
+            <option value="3">B</option>
+            <option value="2.7">B-</option>
+            <option value="2.3">C+</option>
+            <option value="2">C</option>
+            <option value="1.7">C-</option>
+            <option value="1">D</option>
+            <option value="0">F</option>
+          </select>
+          <button class="remove-course" aria-label="Remove course">✕</button>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="addCourse" class="btn">+ Add Course</button>
+        <button id="calculate" class="btn primary">Calculate GPA</button>
+      </div>
+
+      <div id="result" class="result">Your GPA: <strong>--</strong></div>
+    </section>
+
+    <section class="panel" id="info">
+      <h2>What is GPA?</h2>
+      <p>GPA (Grade Point Average) is a standardized way to measure academic performance. This tool uses a common 4.0 scale (A = 4.0).</p>
+
+       <table class="scale-table">
+        <tr>
+            <th>Letter Grade</th>
+            <th>Grade Value</th>
+        </tr>
+        <tr><td>A</td><td>4.0</td></tr>
+        <tr><td>A-</td><td>3.7</td></tr>
+        <tr><td>B+</td><td>3.3</td></tr>
+        <tr><td>B</td><td>3.0</td></tr>
+        <tr><td>B-</td><td>2.7</td></tr>
+        <tr><td>C+</td><td>2.3</td></tr>
+        <tr><td>C</td><td>2.0</td></tr>
+        <tr><td>C-</td><td>1.7</td></tr>
+        <tr><td>D+</td><td>1.3</td></tr>
+        <tr><td>D</td><td>1.0</td></tr>
+        <tr><td>F</td><td>0.0</td></tr>
+    </table>
+
+      <h3>How it works</h3>
+      <ol>
+        <li>Multiply each course's grade-point value by its credit value.</li>
+        <li>Sum all grade points.</li>
+        <li>Divide by the total credits attempted.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Student Tools — Created by Student_tools</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

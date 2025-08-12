@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Free Word Counter - count words, characters and estimate reading time. Ideal for students and writers." />
+  <meta name="keywords" content="word counter, character count, reading time, online tool" />
+  <meta name="author" content="Aftab Hussain" />
+  <title>Word Counter | Student Tools</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Student Tools</a>
+      <nav class="main-nav">
+        <a href="index.html">GPA Calculator</a>
+        <a href="word-counter.html">Word Counter</a>
+        <a href="citation-generator.html">Citation Generator</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1>Free Word Counter</h1>
+      <p class="lead">Paste or type your text below to get word & character counts and estimated reading time.</p>
+
+      <textarea id="textInput" rows="10" placeholder="Start typing or paste text here..."></textarea>
+
+      <div class="stats">
+        <div>Words: <strong id="wordCount">0</strong></div>
+        <div>Characters (with spaces): <strong id="charCountSpaces">0</strong></div>
+        <div>Characters (no spaces): <strong id="charCountNoSpaces">0</strong></div>
+        <div>Estimated reading time: <strong id="readingTime">0</strong> min</div>
+      </div>
+
+      <h2>Why use a Word Counter?</h2>
+      <p>It helps with meeting assignment length, social media post limits, and SEO content planning.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Student Tools — Created by Student_tools</p>
+    </div>
+  </footer>
+
+  <script>
+    const textInput = document.getElementById('textInput');
+    const wordCount = document.getElementById('wordCount');
+    const charCountSpaces = document.getElementById('charCountSpaces');
+    const charCountNoSpaces = document.getElementById('charCountNoSpaces');
+    const readingTime = document.getElementById('readingTime');
+
+    function updateCounts() {
+      const text = textInput.value.trim();
+      const words = text ? text.split(/\s+/).filter(w => w.length > 0).length : 0;
+      const charsWith = textInput.value.length;
+      const charsNo = textInput.value.replace(/\s+/g, '').length;
+      const readMin = words ? Math.ceil(words / 200) : 0;
+
+      wordCount.textContent = words;
+      charCountSpaces.textContent = charsWith;
+      charCountNoSpaces.textContent = charsNo;
+      readingTime.textContent = readMin;
+    }
+
+    textInput.addEventListener('input', updateCounts);
+    updateCounts();
+  </script>
+</body>
+</html>

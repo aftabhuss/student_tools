@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Free APA Citation Generator — quickly create citation references for your assignments." />
+  <meta name="keywords" content="citation generator, APA reference, bibliography, student tools" />
+  <meta name="author" content="Aftab Hussain" />
+  <title>Citation Generator | Student Tools</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Student Tools</a>
+      <nav class="main-nav">
+        <a href="index.html">GPA Calculator</a>
+        <a href="word-counter.html">Word Counter</a>
+        <a href="citation-generator.html">Citation Generator</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1>APA Citation Generator</h1>
+      <p class="lead">Quickly format basic APA-style references for common sources.</p>
+
+      <div class="form-grid">
+        <input id="author" placeholder="Author (Last, F.)" />
+        <input id="year" placeholder="Year (e.g., 2023)" />
+        <input id="title" placeholder="Title of the work" />
+        <input id="source" placeholder="Source / Publisher / URL" />
+      </div>
+
+      <div class="controls">
+        <button id="generate" class="btn primary">Generate Citation</button>
+      </div>
+
+      <div id="resultBox" class="citation-result">
+        <h3>Your Citation</h3>
+        <p id="citationText">--</p>
+      </div>
+
+      <p class="note">Note: This generator makes simple APA citations. For complex sources (edited books, chapters, DOIs), verify with your style guide.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Student Tools — Created by Student_tools</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('generate').addEventListener('click', () => {
+      const author = document.getElementById('author').value.trim();
+      const year = document.getElementById('year').value.trim();
+      const title = document.getElementById('title').value.trim();
+      const source = document.getElementById('source').value.trim();
+
+      if (!author || !year || !title || !source) {
+        alert('Please fill in all fields to generate a citation.');
+        return;
+      }
+
+      const citation = `${author} (${year}). ${title}. ${source}.`;
+      document.getElementById('citationText').textContent = citation;
+    });
+  </script>
+</body>
+</html>
