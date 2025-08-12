@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://yourusername.github.io/student-tools/sitemap.xml
+Sitemap: https://aftabhuss.github.io/student-tools/sitemap.xml
